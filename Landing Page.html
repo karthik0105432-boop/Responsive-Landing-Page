@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    header.scrolled {
+      background-color: #333;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 12px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: white;
+      color: #333;
+      border-radius: 4px;
+    }
+
+    .section {
+      padding: 100px 50px;
+      min-height: 100vh;
+    }
+
+    .hero {
+      background: url('https://picsum.photos/1200/800') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      background-color: #f4f4f4;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .menu a {
+        padding: 10px 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="navbar">
+    <nav>
+      <div class="logo">MyBrand</div>
+      <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="section hero" id="home">
+    <h1>Welcome to My Landing Page</h1>
+    <p>Scroll down to see the nav bar change.</p>
+  </section>
+
+  <section class="section content" id="about">
+  <h2>About Us</h2>
+  <p>
+    We are a passionate team of designers, developers, and digital strategists
+    committed to helping businesses thrive online. Our mission is to create
+    user-focused, high-performance websites that deliver real results. With
+    years of experience across industries, we combine creativity and
+    cutting-edge technology to bring your digital vision to life.
+  </p>
+  <p>
+    Whether you're a startup looking to launch your first product or an
+    established brand seeking to scale, we work closely with you to build
+    solutions tailored to your goals.
+  </p>
+</section>
+
+
+ <section class="section content" id="services">
+  <h2>Our Services</h2>
+  <ul style="line-height: 1.8;">
+    <li><strong>Web Design & Development:</strong> Custom websites built for speed, responsiveness, and user experience.</li>
+    <li><strong>Mobile App Development:</strong> iOS and Android apps designed to engage and retain your users.</li>
+    <li><strong>UI/UX Design:</strong> Intuitive interfaces and user journeys that increase conversions.</li>
+    <li><strong>SEO & Digital Marketing:</strong> Improve your online visibility and drive organic traffic to your site.</li>
+    <li><strong>E-Commerce Solutions:</strong> Scalable platforms for online selling with seamless shopping experiences.</li>
+    <li><strong>Maintenance & Support:</strong> Ongoing updates, security monitoring, and performance optimization.</li>
+  </ul>
+</section>
+
+
+  <section class="section content" id="contact">
+  <h2>Contact Us</h2>
+  <p>
+    Have a question or want to start a project with us? We're here to help!
+    Get in touch using the details below:
+  </p>
+  <ul style="line-height: 1.8;">
+    <li><strong>Email:</strong> mallimunta@gmail.com </li>
+    <li><strong>Phone:</strong> 9876543210</li>
+    <li><strong>Address:</strong> 9-35,chennai </li>
+  </ul>
+  <p>Or simply fill out the contact form below (if included on your site) and we'll get back to you shortly.</p>
+</section>
+
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) 
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+</body>
+</html>
